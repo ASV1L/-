@@ -1,0 +1,288 @@
+
+const Discord = require("discord.js");
+const moment = require('moment')
+const client = new Discord.Client();
+require('http').createServer((req, res) => res.end('bot  is alive')).listen(3000)
+client.on('ready', async () => {
+  console.log(`${client.user.tag}`)
+})
+
+
+setTimeout(() => {
+  if (!client || !client.user) {
+    console.log("Client Not Login, Process Kill")
+    process.kill(1);
+  } else {
+    console.log("Client Login")
+  }
+}, 3 * 1000 * 60);
+client.login(`MTEzODc3NDE3MTYzNjIyNDAwMA.GxqJsM.zJ2JAbIIXyGR0OUTk_P53AP0whzwC-dFl-13w4`)
+
+const prefix = "="; // بادئة البوت
+// كود تقديم ادارة
+
+
+
+
+//انشاء قيم //
+
+
+
+
+
+client.on('message', async (wolf) => {
+  if (wolf.content.startsWith(prefix + "رحلة")) {
+    wolf.delete();
+    let filter1 = (m => m.author.id = wolf.author.id);
+    var q1
+    var q2
+    var q3
+    var q4
+
+
+
+
+    wolf.channel.send("**- #- هـوسـت الـقـيـم :   **").then(async fox => {
+      fox.channel.awaitMessages(filter1, {
+        max: 1,
+        time: 180000,
+        errors: ['time']
+      }).then(collected => {
+        q1 = collected.first().content;
+        collected.first().delete();
+        fox.edit("**- #- مـسـاعـد الـهـوسـت    : **").then(async fox => {
+          fox.channel.awaitMessages(filter1, {
+            max: 1,
+            time: 180000,
+            errors: ['time']
+          }).then(collected => {
+            q2 = collected.first().content;
+            collected.first().delete()
+            fox.edit("** - #- مـوعـد الـرحـلـة   :**").then(async fox => {
+              fox.channel.awaitMessages(filter1, {
+                max: 1,
+                time: 180000,
+                errors: ['time']
+              }).then(collected => {
+                q3 = collected.first().content;
+                collected.first().delete()
+                fox.edit("**   #- رقـم الـرحـلـة  :**").then(async fox => {
+                  fox.channel.awaitMessages(filter1, {
+                    max: 1,
+                    time: 180000,
+                    errors: ['time']
+                  }).then(collected => {
+                    q4 = collected.first().content;
+                    collected.first().delete();
+                    fox.delete();
+                    fox.channel.send(`__**حـجـز تـذكـرة بـدولـة  رعب ستي  <:emoji_19:1251042481630351390>:  
+
+#- هـوسـت الـقـيـم : ${q1}
+
+
+#- مـسـاعـد الـهـوسـت : ${q2}
+
+#- مـوعـد الـرحـلـة : ${q3}
+
+  #- رقـم الـرحـلـة  : ${q4}
+
+#- الـحـد الأقـصـى لـ الـركـاب : 30
+
+#- الـحـد الأدنـى لـ الـركـاب :  12
+
+
+#-لـتـصـويت الـرجـاء الـضـغـط عـ الأيـمـوجـي بالأسـفـل 
+
+<@&1230200720985292920> - مـلاحـظـه : تـصـوت ولـم تـحـضـر سـوف يـتـم اعطائك
+
+
+
+
+
+|| @everyone ||**__`).then(emoji => {
+                      emoji.react("\<:emoji_19:1251042481630351390>")
+                      wolf.channel.send('https://media.discordapp.net/attachments/1230200765771943997/1251617876767408179/3A234A2B-116D-44FB-838D-706BB09BF51E.jpg?ex=666f3b7b&is=666de9fb&hm=a213ea74308cdc836658158338a3b4f616c66c39a832d0e8c1f06be47a4c95a0&')
+                      wolf.channel.send('https://media.discordapp.net/attachments/1230200844646088846/1248989336599396362/copy_ABCBABCA-57E8-4642-A383-787882220711_1.gif?ex=666b9a36&is=666a48b6&hm=a45f723ca56221b4db8e98f5233b0a0c0efe726a6d2f03e958aea150112d5665&')
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+});
+
+
+
+
+
+//تاكيد ركاب //
+
+client.on('message', async (wolf) => {
+  if (wolf.content.startsWith(prefix + "تأكيد اقلاع")) {
+    wolf.delete();
+    let filter1 = (m => m.author.id = wolf.author.id);
+    var q1
+    var q2
+    var q3
+    var q4
+
+
+
+
+    wolf.channel.send("**- مـوعـد الرحـلـة  :   **").then(async fox => {
+      fox.channel.awaitMessages(filter1, {
+        max: 1,
+        time: 180000,
+        errors: ['time']
+      }).then(collected => {
+        q1 = collected.first().content;
+        collected.first().delete();
+        fox.edit("**-  كابتن الطائرة  : **").then(async fox => {
+          fox.channel.awaitMessages(filter1, {
+            max: 1,
+            time: 180000,
+            errors: ['time']
+          }).then(collected => {
+            q2 = collected.first().content;
+            collected.first().delete()
+            fox.edit("** - مساعد كابتن الطائرة   :**").then(async fox => {
+              fox.channel.awaitMessages(filter1, {
+                max: 1,
+                time: 180000,
+                errors: ['time']
+              }).then(collected => {
+                q3 = collected.first().content;
+                collected.first().delete()
+                fox.edit("** منشن منظمين الرحلة:**").then(async fox => {
+                  fox.channel.awaitMessages(filter1, {
+                    max: 1,
+                    time: 180000,
+                    errors: ['time']
+                  }).then(collected => {
+                    q4 = collected.first().content;
+                    collected.first().delete();
+                    fox.delete();
+                    fox.channel.send(`**__ تـأكيـد إقـلاع طـائرة <:1128114390470758520:1251619002250170494>
+
+مـوعـد الرحـلـة  : ${q1}
+
+
+كابتن الطائره : ${q2}
+
+
+مساعد كابتن الطائرة : ${q3}  
+
+
+منظمين الرحلة 
+
+# - ${q4}
+
+
+مـلاحـظات مـهـمة
+
+(1) فـي حـال مـواجهـتك لمـشكلة قـم بالأتـصال بالمنظمين
+
+(2) فـي حـال واجـهة مخـرب أو مـخالف للرول بلاي عـدم إكـثار الكلام معه وإحضـار الأدلـة الـكـافـية وإرسـالها للـمنظمـين
+
+(3) يرجـى مراجـعة القوانين لتجنـب مخـالفـتك
+
+(4) عـدم الـتخريـب فـي حـال وجود مـخـرب وخروجـك من القـيم
+
+نـرجـوا إسـتـمـتاعكم في دولـة رايف ستي
+ 
+@here __**`).then(emoji => {
+                      emoji.react("<:1128114390470758520:1251619002250170494>")
+                      wolf.channel.send('https://media.discordapp.net/attachments/1230200765771943997/1251619902486220810/5C1E0AE4-C395-4C03-9014-A7ED701F7C47.png?ex=666f3d5e&is=666debde&hm=d69ea785a745b6c0db4644be6f64a5996a2da1c722a3efb4f16d214c7557bef9&')
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+});
+
+
+
+
+client.on("message", message => {
+  if (message.content.startsWith(prefix + 'تم الفحص')) {
+
+    message.delete()
+
+    let embed2 = new Discord.MessageEmbed()
+
+      .setDescription(`**__ - عزيزي طاقم الطائره : ${message.author}
+
+  
+- تم فحص جميع ركاب الطائرة للمطار الدولي
+
+  
+- وتم حجز جميع التذاكر وتم اقلاع الطائرة بنجاح نرجو من الجميع الانتباه وربط الاحزمة
+__**`)
+      .setThumbnail("https://media.discordapp.net/attachments/1230200765771943997/1251620789636300850/52E7119D-A049-4CBB-BF41-7F825DCBCF14.png?ex=666f3e32&is=666decb2&hm=f6c1eba80d67c826aec6d0729c958374495c63e84bfb223bfa9c1dc83d1a5b4b&")
+      .setImage('https://media.discordapp.net/attachments/1230200844646088846/1248989336599396362/copy_ABCBABCA-57E8-4642-A383-787882220711_1.gif?ex=666b9a36&is=666a48b6&hm=a45f723ca56221b4db8e98f5233b0a0c0efe726a6d2f03e958aea150112d5665&')
+
+      .setColor('#ffffff')
+      .setFooter(`${client.user.username}`, client.user.avatarURL())
+      .setAuthor(`    ${message.guild.name}`, message.guild.iconURL({ dynamic: true }))
+      .setTimestamp()
+    message.channel.send(embed2)
+  }
+});
+
+client.on('message', async message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
+  if (command === 'فحص') {
+
+    if (!message.member.roles.cache.has('1144905202655309885')) return;
+    let user = await message.mentions.members.first() || await message.guild.members.cache.get(args[0]);
+    let member = message.guild.member(user);
+    let log = await client.channels.cache.get('1251622651344978012');
+    if (!user) return await message.channel.send('منشن الشخص');
+    let embed = new Discord.MessageEmbed()
+      .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+
+      .setDescription(`**__ # - عزيزي العضو : ${user}
+
+- تم فحصك في الطائره بنجاح <a:1150131137679728663:1251622295617667223>
+
+- الرجاء ربط احزمة الامان و انتظار موعد اقلاع الطائرة وراجع جميع القاونين لتجنب السجين
+
+
+- تم فحصك من قبل : ${message.author}
+
+# - وشكرا لك  على زيارة مدينة رعب ستي __**`)
+
+
+
+
+      .setColor('#ffffff')
+      .setFooter(`${client.user.username}`, client.user.avatarURL())
+      .setAuthor(`    ${message.guild.name}`, message.guild.iconURL({ dynamic: true }))
+      .setTimestamp()
+
+
+    await user.send(embed).catch(err => {
+
+
+
+    });
+
+
+    await message.channel.send(`**__تم فحص المواطن بنجاح <a:1150131137679728663:1251622295617667223>__** `)
+  }
+});
+
+
+                    
